@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Hero() {
   const fadeInUp = {
@@ -19,6 +20,18 @@ export default function Hero() {
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gold rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold rounded-full blur-3xl animate-pulse delay-700"></div>
+      </div>
+
+      {/* Logo Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-5">
+        <Image
+          src="/logo.jpg"
+          alt=""
+          width={600}
+          height={600}
+          className="w-[500px] h-[500px] object-contain"
+          priority
+        />
       </div>
 
       {/* Content */}

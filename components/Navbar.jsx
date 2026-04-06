@@ -39,14 +39,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center">
-            <Image
-              src="/logo.jpg"
-              alt="The Dungeon Club"
-              width={60}
-              height={60}
-              className="w-12 h-12 md:w-16 md:h-16 object-contain"
-              priority
-            />
+            <div className="relative">
+              <Image
+                src="/logo.jpg"
+                alt="The Dungeon Club"
+                width={60}
+                height={60}
+                className="w-14 h-14 md:w-20 md:h-20 object-contain rounded-full bg-black p-1 transition-transform duration-300 hover:scale-110"
+                priority
+              />
+            </div>
           </a>
 
           {/* Desktop Navigation */}

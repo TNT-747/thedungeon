@@ -11,9 +11,12 @@ A modern, production-ready gym website built with Next.js 14 for The Dungeon Clu
 - Fully responsive design (mobile-first)
 - Smooth scroll behavior
 - WhatsApp integration for membership inquiries
+- 4 membership tiers (Starter, Warrior, Elite, Champion)
+- 4 coaching services (Personal Training, Online, Group, Nutrition)
 - Google Maps integration
 - SEO optimized
 - Dark premium aesthetic
+- Circular logo integration throughout
 
 ## 📋 Prerequisites
 

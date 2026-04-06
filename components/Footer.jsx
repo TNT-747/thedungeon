@@ -33,13 +33,15 @@ export default function Footer() {
           {/* Column 1 - Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-              <Image
-                src="/logo.jpg"
-                alt="The Dungeon Club"
-                width={60}
-                height={60}
-                className="w-16 h-16 object-contain"
-              />
+              <div className="relative">
+                <Image
+                  src="/logo.jpg"
+                  alt="The Dungeon Club"
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 object-contain rounded-full bg-black p-2 border-2 border-gold/30"
+                />
+              </div>
               <div>
                 <div className="flex items-center space-x-1">
                   <span className="text-xl font-heading text-white font-bold tracking-wider">

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Check, Crown } from 'lucide-react'
+import { Check, Crown, Users, Video, UsersRound, Apple } from 'lucide-react'
 
 export default function Offers() {
   const ref = useRef(null)
@@ -65,6 +65,57 @@ export default function Offers() {
         'Guest passes'
       ],
       popular: false
+    }
+  ]
+
+  const coachingPlans = [
+    {
+      name: 'PERSONAL TRAINING',
+      icon: Users,
+      duration: 'Per Session',
+      price: '300',
+      features: [
+        '1-on-1 personalized training',
+        'Custom workout programs',
+        'Form correction & technique',
+        'Progress tracking & adjustments'
+      ]
+    },
+    {
+      name: 'ONLINE COACHING',
+      icon: Video,
+      duration: 'Per Month',
+      price: '800',
+      features: [
+        'Remote training programs',
+        'Weekly video check-ins',
+        'Custom workout plans',
+        '24/7 messaging support'
+      ]
+    },
+    {
+      name: 'GROUP COACHING',
+      icon: UsersRound,
+      duration: 'Per Session',
+      price: '150',
+      features: [
+        'Small group training (4-6 people)',
+        'Motivating team environment',
+        'Professional guidance',
+        'Cost-effective training'
+      ]
+    },
+    {
+      name: 'NUTRITION COACHING',
+      icon: Apple,
+      duration: 'Per Month',
+      price: '600',
+      features: [
+        'Personalized meal plans',
+        'Macro & calorie guidance',
+        'Supplement recommendations',
+        'Monthly consultations'
+      ]
     }
   ]
 
@@ -170,6 +221,81 @@ export default function Offers() {
               </button>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Coaching Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-24"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white tracking-tight mb-4">
+              COACHING
+              <br />
+              <span className="text-gold">SERVICES</span>
+            </h3>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              Accélérez vos résultats avec nos services de coaching professionnels et personnalisés.
+            </p>
+          </div>
+
+          {/* Coaching Cards Grid */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          >
+            {coachingPlans.map((coaching, index) => {
+              const Icon = coaching.icon
+              return (
+                <motion.div
+                  key={index}
+                  variants={cardVariants}
+                  className="relative bg-gradient-to-br from-dark-3 to-dark-2 border border-gold/30 rounded-sm p-6 sm:p-8 transition-all duration-300 hover:scale-105 hover:border-gold/70 hover:shadow-lg hover:shadow-gold/10"
+                >
+                  {/* Icon */}
+                  <div className="flex justify-center mb-6">
+                    <div className="bg-gold/10 p-4 rounded-full">
+                      <Icon className="text-gold" size={36} />
+                    </div>
+                  </div>
+
+                  {/* Coaching Header */}
+                  <div className="text-center mb-6">
+                    <h4 className="text-xl sm:text-2xl font-heading font-bold text-white mb-2 tracking-wider">
+                      {coaching.name}
+                    </h4>
+                    <p className="text-white/60 text-xs mb-4 uppercase tracking-wide">{coaching.duration}</p>
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span className="text-4xl font-heading font-bold text-gold">{coaching.price}</span>
+                      <span className="text-white/60 text-sm">MAD</span>
+                    </div>
+                  </div>
+
+                  {/* Features List */}
+                  <ul className="space-y-3 mb-8">
+                    {coaching.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-start gap-3 text-white/80 text-sm">
+                        <Check className="text-gold flex-shrink-0 mt-0.5" size={16} />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA Button */}
+                  <button
+                    onClick={() => handleSelectPlan(coaching.name)}
+                    className="w-full py-3 px-6 font-heading text-base tracking-wider font-bold rounded-sm transition-all duration-300 bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-dark"
+                  >
+                    BOOK NOW
+                  </button>
+                </motion.div>
+              )
+            })}
+          </motion.div>
         </motion.div>
       </div>
     </section>
