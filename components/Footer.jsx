@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <div className="relative">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo.png"
                   alt="The Dungeon Club"
                   width={80}
                   height={80}
