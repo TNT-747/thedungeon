@@ -25,7 +25,7 @@ export default function Hero() {
       {/* Logo Watermark */}
       <div className="absolute inset-0 flex items-center justify-center opacity-5">
         <Image
-          src="/logo.jpg"
+          src="/logo.png"
           alt=""
           width={600}
           height={600}
