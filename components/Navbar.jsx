@@ -41,7 +41,7 @@ export default function Navbar() {
           <a href="#home" className="flex items-center">
             <div className="relative">
               <Image
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="The Dungeon Club"
                 width={60}
                 height={60}
